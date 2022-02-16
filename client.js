@@ -12,8 +12,8 @@ const connect = function() {
   //interpret incoming data as text
   conn.setEncoding('utf8');
 
-  conn.write("Name: ARG");
-
+  // conn.write("Name: ARG");
+  conn.write('Move: up')
   conn.on('data', (data) => {
     console.log(data);
   })
