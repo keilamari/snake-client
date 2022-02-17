@@ -8,17 +8,22 @@ const setupInput = (conn) => {
   stdin.setEncoding("utf8");
   stdin.resume();
   stdin.on('data', (key) => {
-    if (key === '\u0003') {
-      process.exit();
-    }
     if (key === 'w') {
-      connection.write('Move: Up') 
+      connection.write('Move: up') 
     } if (key ==='a') {
       connection.write('Move: left') 
     } if (key === 's') {
       connection.write('Move: down')
     } if (key === 'd') {
       connection.write('Move: right')
+    }  if (key === '\u0003') {
+      process.exit();
+    }
+    if (key === 'y') {
+      connection.write('Say: YIKES')
+    }
+    if (key === 'q') {
+      connection.write('YEESH')
     }
   });
 

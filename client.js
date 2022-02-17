@@ -13,10 +13,10 @@ const connect = function() {
   conn.setEncoding('utf8');
 
   // conn.write("Name: ARG");
-  conn.write('Move: up')
+  // conn.write('Move: up')
   conn.on('data', (data) => {
     console.log(data);
-  })
+  });
 
   return conn;
 };
