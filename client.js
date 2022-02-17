@@ -1,8 +1,6 @@
 const net = require('net');
-const credentials = {
-  port: 50541,
-  host: "165.227.47.243"
-};
+const credentials = require("./constants");
+
 
 const connect = function() {
   const conn = net.createConnection(credentials, () => {
@@ -12,8 +10,8 @@ const connect = function() {
   //interpret incoming data as text
   conn.setEncoding('utf8');
 
-  // conn.write("Name: ARG");
-  // conn.write('Move: up')
+  conn.write("Name: ARG");
+
   conn.on('data', (data) => {
     console.log(data);
   });
